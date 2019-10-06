@@ -44,54 +44,44 @@ namespace GADE6112_POE
             //Buildings spawning
             for (int i = 0; i < buildingNum; i++)
             {
-                if (rd.Next(0, 2) == 0)
+                int unitTypeN = rd.Next(0, 2);
+                string unitName;
+
+                if (unitTypeN == 0)
                 {
-                    int unitTypeN = rd.Next(0, 2);
-                    string unitName;
-
-                    if (unitTypeN == 0)
-                    {
-                        unitName = "Ranged";
-                    }
-                    else
-                    {
-                        unitName = "Melee";
-                    }
-
-                    FactoryBuilding factory = new FactoryBuilding(0, 0, 100, "|^|", Faction.Dire, rd.Next(3, 10), unitName);
-                    factories.Add(factory);
+                    unitName = "Ranged";
                 }
                 else
                 {
-                    ResourceBuilding mine = new ResourceBuilding(0, 0, 100, "|V|", Faction.Dire, rd.Next(3, 10), ResourceType.Gold);
-                    mines.Add(mine);
+                    unitName = "Melee";
                 }
+
+                FactoryBuilding factory = new FactoryBuilding(0, 0, 100, "|^|", Faction.Dire, rd.Next(3, 10), unitName);
+                factories.Add(factory);
+
+                ResourceBuilding mine = new ResourceBuilding(0, 0, 100, "|V|", Faction.Dire, rd.Next(3, 10), ResourceType.Gold);
+                mines.Add(mine);
             }
 
             for (int i = 0; i < buildingNum; i++)
             {
-                if (rd.Next(0, 2) == 0)
+                int unitTypeN = rd.Next(0, 2);
+                string unitName;
+
+                if (unitTypeN == 0)
                 {
-                    int unitTypeN = rd.Next(0, 2);
-                    string unitName;
-
-                    if (unitTypeN == 0)
-                    {
-                        unitName = "Ranged";
-                    }
-                    else
-                    {
-                        unitName = "Melee";
-                    }
-
-                    FactoryBuilding factory = new FactoryBuilding(0, 0, 100, "|^|", Faction.Radient, rd.Next(3,10), unitName);
-                    factories.Add(factory);
+                    unitName = "Ranged";
                 }
                 else
                 {
-                    ResourceBuilding mine = new ResourceBuilding(0, 0, 100, "|V|", Faction.Radient, rd.Next(3, 10), ResourceType.Gold);
-                    mines.Add(mine);
+                    unitName = "Melee";
                 }
+
+                FactoryBuilding factory = new FactoryBuilding(0, 0, 100, "|^|", Faction.Radient, rd.Next(3, 10), unitName);
+                factories.Add(factory);
+
+                ResourceBuilding mine = new ResourceBuilding(0, 0, 100, "|V|", Faction.Radient, rd.Next(3, 10), ResourceType.Gold);
+                mines.Add(mine);
             }
 
             foreach (FactoryBuilding u in factories)
