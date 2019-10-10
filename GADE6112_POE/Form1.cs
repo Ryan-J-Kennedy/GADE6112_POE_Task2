@@ -60,20 +60,7 @@ namespace GADE6112_POE
 
                     if (m.map[x, y] == "R")
                     {
-                        if(m.unitMap[x,y] is MeleeUnit)
-                        {
-                            MeleeUnit M = (MeleeUnit)m.unitMap[x, y];
-                            btn.Text = M.Symbol;
-                            if (M.FactionType == Faction.Dire)
-                            {
-                                btn.BackColor = Color.Red;
-                            }
-                            else
-                            {
-                                btn.BackColor = Color.Green;
-                            }
-                        }
-                        else if(m.unitMap[x,y] is RangedUnit)
+                        if(m.unitMap[x,y] is RangedUnit)
                         {
                             RangedUnit R = (RangedUnit)m.unitMap[x, y];
                             btn.Text = R.Symbol;
@@ -85,10 +72,10 @@ namespace GADE6112_POE
                             {
                                 btn.BackColor = Color.Green;
                             }
+                            btn.Name = m.unitMap[x, y].ToString();
+                            btn.Click += MyButtonClick;
+                            gbMap.Controls.Add(btn);
                         }
-                        
-                        btn.Name = m.unitMap[x, y].ToString();
-                        btn.Click += MyButtonClick;
                     }
                     else if (m.map[x, y] == "M")
                     {
@@ -104,22 +91,10 @@ namespace GADE6112_POE
                             {
                                 btn.BackColor = Color.Green;
                             }
+                            btn.Name = m.unitMap[x, y].ToString();
+                            btn.Click += MyButtonClick;
+                            gbMap.Controls.Add(btn);
                         }
-                        else if (m.unitMap[x, y] is RangedUnit)
-                        {
-                            RangedUnit R = (RangedUnit)m.unitMap[x, y];
-                            btn.Text = R.Symbol;
-                            if (R.FactionType == Faction.Dire)
-                            {
-                                btn.BackColor = Color.Red;
-                            }
-                            else
-                            {
-                                btn.BackColor = Color.Green;
-                            }
-                        }
-                        btn.Name = m.unitMap[x, y].ToString();
-                        btn.Click += MyButtonClick;
                     }
                     else if (m.map[x,y] == "FB")
                     {
@@ -135,40 +110,14 @@ namespace GADE6112_POE
                             {
                                 btn.BackColor = Color.Green;
                             }
+                            btn.Name = m.buildingMap[x, y].ToString();
+                            btn.Click += MyButtonClick;
+                            gbMap.Controls.Add(btn);
                         }
-                        else if (m.buildingMap[x, y] is ResourceBuilding)
-                        {
-                            ResourceBuilding RB = (ResourceBuilding)m.buildingMap[x, y];
-                            btn.Text = RB.Symbol;
-                            if (RB.FactionType == Faction.Dire)
-                            {
-                                btn.BackColor = Color.Red;
-                            }
-                            else
-                            {
-                                btn.BackColor = Color.Green;
-                            }
-                        }
-
-                        btn.Name = m.buildingMap[x, y].ToString();
-                        btn.Click += MyButtonClick;
                     }
                     else if (m.map[x,y] == "RB")
                     {
-                        if (m.buildingMap[x, y] is FactoryBuilding)
-                        {
-                            FactoryBuilding FB = (FactoryBuilding)m.buildingMap[x, y];
-                            btn.Text = FB.Symbol;
-                            if (FB.FactionType == Faction.Dire)
-                            {
-                                btn.BackColor = Color.Red;
-                            }
-                            else
-                            {
-                                btn.BackColor = Color.Green;
-                            }
-                        }
-                        else if (m.buildingMap[x, y] is ResourceBuilding)
+                        if (m.buildingMap[x, y] is ResourceBuilding)
                         {
                             ResourceBuilding RB = (ResourceBuilding)m.buildingMap[x, y];
                             btn.Text = RB.Symbol;
@@ -180,25 +129,11 @@ namespace GADE6112_POE
                             {
                                 btn.BackColor = Color.Green;
                             }
+                            btn.Name = m.buildingMap[x, y].ToString();
+                            btn.Click += MyButtonClick;
+                            gbMap.Controls.Add(btn);
                         }
-
-                        btn.Name = m.buildingMap[x, y].ToString();
-                        btn.Click += MyButtonClick;
                     }
-                    else
-                    {
-                        btn.Text = "";
-                    }
-
-                    buttons[x,y] = btn;
-                }
-            }
-
-            for (int x = 0; x < 20; x++)
-            {
-                for (int y = 0; y < 20; y++)
-                {
-                    gbMap.Controls.Add(buttons[x, y]);
                 }
             }
         }
