@@ -239,8 +239,6 @@ namespace GADE6112_POE
                 m.PlaceUnits();
                 m.PlaceBuildings();
                 Placebuttons();
-
-
             }
             else
             {
@@ -266,7 +264,6 @@ namespace GADE6112_POE
                 {
                     m.map[m.rangedUnits[i].PosX, m.rangedUnits[i].PosY] = "";
                     m.rangedUnits.RemoveAt(i);
-                    
                 }
             }
 
@@ -276,7 +273,6 @@ namespace GADE6112_POE
                 {
                     m.map[m.meleeUnits[i].PosX, m.meleeUnits[i].PosY] = "";
                     m.meleeUnits.RemoveAt(i);
-
                 }
             }
 
@@ -295,7 +291,6 @@ namespace GADE6112_POE
                         m.map[R.PosX, R.PosY] = "";
                     }
 
-                    
                     m.units.RemoveAt(i);
                 }
             }
@@ -306,7 +301,6 @@ namespace GADE6112_POE
                 {
                     m.map[m.factories[i].PosX, m.factories[i].PosY] = "";
                     m.factories.RemoveAt(i);
-
                 }
             }
 
@@ -316,7 +310,6 @@ namespace GADE6112_POE
                 {
                     m.map[m.mines[i].PosX, m.mines[i].PosY] = "";
                     m.mines.RemoveAt(i);
-
                 }
             }
 
@@ -338,8 +331,6 @@ namespace GADE6112_POE
                     m.buildings.RemoveAt(i);
                 }
             }
-
-
         }
 
         //The on click event of the buttons with the units
